@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>vue_test03</title>
+	</head>
+
+	<body>
+		<div id="app">
+			<ul>
+				<li v-for="(item,index) in list" :key="index" v-if="index % 2 == 0">
+					{{item}}----{{index}}
+				</li>
+				<li v-for="(value,key) in user">
+					{{key}}==={{value}}
+				</li>
+				<li v-for="(item,index) in userlist" :key="item.user.name">
+					<div v-if="item.user.name == 'itcast'" style="background: brown;">
+						{{item.user.name}}--{{item.user.age}}---{{index}}
+					</div>
+					<div v-else="" style="background: cornflowerblue;">
+						{{item.user.name}}--{{item.user.age}}---{{index}}
+					</div>
+				</li>
+			</ul>
+		</div>
+	</body>
+	<script src="build.js"></script>
+<!--放到下面才有效-->
+</html>

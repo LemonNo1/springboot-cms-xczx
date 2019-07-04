@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>vue_test03</title>
+	</head>
+	<script src="vue.min.js"></script>
+
+	<body>
+		<div id="app">
+			<a v-bind:href="url">
+				<span v-text="name"></span>
+			</a>
+			<input type="text" name="" id="" v-model="num1" />
+			<input type="text" name="" id="" v-model="num2" />
+			<!--={{Number.parseInt(num1)+Number.parseInt(num2)}}
+		={{num1+num2}}-->
+			<!--解决差值表达式，散数的问题
+				见test02
+			-->
+			<span v-text="result"></span>
+			<button v-on:click="change">计算</button>
+		</div>
+	</body>
+	<script>
+		var VM = new Vue({
+			el: '#app', // vm接管了app区域的管理 
+			data: {
+				name: 'Lemon学院',
+				num1: 1,
+				num2: 2,
+				result: 0,
+				url: 'http://www.baidu.com'
+			},
+			methods: {
+				change: function() {
+					this.result = Number.parseInt(this.num1) + Number.parseInt(this.num2)
+					alert('计算结果' + this.result);
+				}
+			}
+		})
+	</script>
+
+</html>

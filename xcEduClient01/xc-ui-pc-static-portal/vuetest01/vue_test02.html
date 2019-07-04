@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>vue_test02</title>
+	</head>
+
+	<body>
+		<div id="app">
+			{{name}}:
+		<input type="text" name="" id=""  v-model="num1"/>
+		<input type="text" name="" id=""  v-model="num2" />
+		={{Number.parseInt(num1)+Number.parseInt(num2)}}
+		={{num1+num2}}
+		<button>计算</button>
+		</div>
+	</body>
+		<script src="vue.min.js"></script>
+	<script>
+		var VM = new Vue({
+			el: '#app', // vm接管了app区域的管理 
+			data: {
+				name: 'Lemon学院',
+				num1:1,
+				num2:2,
+			},
+		})
+	</script>
+
+</html>
